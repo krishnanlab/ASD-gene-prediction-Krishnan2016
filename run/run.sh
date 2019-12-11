@@ -23,13 +23,13 @@ for trial in $(seq 1 $n_trials); do
         echo "Fold ${fold}:"
 
         echo "Training on E1 only..."
-        python ${DIR}/src/predict.py --numpy ${DIR}/data/networks/brain.npy --rows ${DIR}/data/networks/brain_genes.tsv --fill_diagonal 1 --labels ${DIR}/results/splits/negatives_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E1_trial${trial}_fold${fold}.tsv --output ${DIR}/results/predictions/E1 --test
+        python ${DIR}/src/predict.py --numpy ${DIR}/data/networks/brain.npy --rows ${DIR}/data/networks/brain_genes.tsv --fill_diagonal 1 --labels ${DIR}/results/splits/negatives_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E1_trial${trial}_fold${fold}.tsv --output ${DIR}/results/predictions/E1
 
         echo "Training on E1 + E2..."
-        python ${DIR}/src/predict.py --numpy ${DIR}/data/networks/brain.npy --rows ${DIR}/data/networks/brain_genes.tsv --fill_diagonal 1 --labels ${DIR}/results/splits/negatives_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E1_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E2_trial${trial}_fold${fold}.tsv --output ${DIR}/results/predictions/E1+E2 --test
+        python ${DIR}/src/predict.py --numpy ${DIR}/data/networks/brain.npy --rows ${DIR}/data/networks/brain_genes.tsv --fill_diagonal 1 --labels ${DIR}/results/splits/negatives_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E1_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E2_trial${trial}_fold${fold}.tsv --output ${DIR}/results/predictions/E1+E2
 
         echo "Training on E1 + E2 + E3 + E4..."
-        python ${DIR}/src/predict.py --numpy ${DIR}/data/networks/brain.npy --rows ${DIR}/data/networks/brain_genes.tsv --fill_diagonal 1 --labels ${DIR}/results/splits/negatives_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E*_trial${trial}_fold${fold}.tsv --output ${DIR}/results/predictions/E1+E2+E3+E4 --test
+        python ${DIR}/src/predict.py --numpy ${DIR}/data/networks/brain.npy --rows ${DIR}/data/networks/brain_genes.tsv --fill_diagonal 1 --labels ${DIR}/results/splits/negatives_trial${trial}_fold${fold}.tsv ${DIR}/results/splits/E*_trial${trial}_fold${fold}.tsv --output ${DIR}/results/predictions/E1+E2+E3+E4
     done
 done
 
